@@ -1,59 +1,29 @@
-$(document).ready(function() {
+var giveNumber = prompt("choose a number between 1 and 100", "0");
+var num = parseInt(giveNumber);
 	
-	var list = $("ul")
-	
-
 function taylorsBuzz() {
-		for (var i  =1; i <=100; i++) {
-			if (i % 3 === 0 && i % 5 === 0) {
-				list.append("<li>Fizz Buzz!</li>");
+
+
+        for (var i  =1; i <= num; i++) {
+            var current = ''
+
+			if (i % 1 != 0) {
+				current = alert("please enter a whole number!")
 			}
-			else if (i % 3 === 0) {
-				list.append("<li>Fizz</li>");
+			if (i % 3 === 0) {
+				current+='Fizz'
 			}
-			else if (i % 5 === 0) {
-				list.append("<li>Buzz</li>");
+			if (i % 5 === 0) {
+				current+='Buzz'
 			}
-			else 
-				list.append("<li>" + i + "</li>");
+
+
+            console.log((current||i) + "\n ")
 		}
 	}
+
 taylorsBuzz();
-	
-});
-	
+console.log(num)	
 
-/**
-$(document).ready(function() {
-    
-    var inputNumber = parseInt(prompt("Enter a number to FizzBuzz."));
-    if (isNaN(inputNumber)) {
-        alert("Please enter a number.");
-    }
-    else if (inputNumber % 1 !== 0) {
-        alert("Enter a whole number.");
-    }
-    else {
-        fizzbuzz(inputNumber);
-    }
-function fizzbuzz() {
-    for (var i = 1; i <= inputNumber; i++) {
-    
-        if (i % 5 === 0 && i % 3 === 0) {
-            $("body").append('FizzBuzz');
-        }
-        else if (i % 5 === 0) {
-            $("body").append('Buzz');
-        }
-        else if (i % 3 === 0) {
-            $("body").append('Fizz');
-        }
-        else {
-            $("body").append(i);
-        }
-        $("body").append("<br>");
-    };
-}
-});
+	//make fizz buzz without using if and for loop but just using plain old javascript functions
 
-**/
